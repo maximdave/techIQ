@@ -1,0 +1,6 @@
+<% if(message) { %>
+    <div style="text-align:center" class="alert alert-<%=message.type%>">
+       <button type="button" class="close" data-dismiss="alert">&times;</button>
+       <strong><%= message.intro %></strong><%= message.message %>
+    </div> 
+<% } %> 

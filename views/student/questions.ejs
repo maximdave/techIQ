@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>techIQ</title>
+    <!-- Bootstrap Styles-->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="/assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="/assets/js/Lightweight-Chart/cssCharts.css"> 
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><strong><img src="/assets/img/tach.png" style="width: 100px; height: 100px;margin-top: -30px;"></strong></a>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-comment fa-fw"></i> New Comment
+                                        <span class="pull-right text-muted small">4 min</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                        <span class="pull-right text-muted small">12 min</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                        <span class="pull-right text-muted small">4 min</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-tasks fa-fw"></i> New Task
+                                        <span class="pull-right text-muted small">4 min</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                        <span class="pull-right text-muted small">4 min</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-alerts -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="/api/user/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+
+            
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+		<div id="sideNav" href=""></div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="home"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="courses"><i class="fa fa-bar-chart-o"></i> Check Available Courses</a>
+                    </li>
+                    <li>
+                        <a href="take-exam"><i class="fa fa-desktop"></i>Take Exams</a>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="#"><i class="fa fa-file"></i>Results</a>
+                    </li>
+                    <li>
+                        <a href="profile"><i class="fa fa-user"></i>profile</a>
+                    </li>
+                    <li>
+                        <a href="myexam"><i class="fa fa-edit"></i>My Exams</a>
+                    </li>
+                    <li>
+                        <a href="message"><i class="fa fa-fw fa-envelope"></i>Message us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div class="header"> 
+                          <h1 class="page-header">
+                              Result Page<small> All Results Related To You</small>
+                          </h1>
+                          <ol class="breadcrumb">
+                        <li><a href="home">Home</a></li>
+                        <li class="active"><a href="#">Results</a></li>
+                      </ol>                        
+            </div>
+          
+            <div id="page-inner"> 
+                <div class="row">
+                  <div class="col-lg-12">
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              This Page Contains Your Test Questions
+                          </div>
+                          <div class="panel-body">
+                              <h1>TAKE YOUR TEST</h1>
+
+                              <div style="margin-left: 50px;" class="exampage">
+                    
+                                <% for(let i = 0; i<exam.length; i++){ %>
+                                    <div id=<%=`question${i}`%> >
+                                        <h4><%= `${i + 1}.` %>  <%= exam[i].question %></h4>
+                                        <div style="margin-left: 50px;">
+                                            <input onclick="correct()" type="radio" id="option1" name=<%=`option${i+1}`%> value=<%= exam[i].allOptions[0].split(" ").join("--") %>>
+                                            <label id="option1" for="option1"><%= exam[i].allOptions[0] %></label><br>
+                                            <input onclick="correct()" type="radio" id="option2" name=<%=`option${i+1}`%> value=<%= exam[i].allOptions[1].split(" ").join("--") %>>
+                                            <label id="option2" for="option2"><%= exam[i].allOptions[1] %></label><br>
+                                            <input onclick="correct()" type="radio" id="option3" name=<%=`option${i+1}`%> value=<%= exam[i].allOptions[2].split(" ").join("--") %>>
+                                            <label id="option3" for="option3"><%= exam[i].allOptions[2] %></label><br>
+                                            <input onclick="correct()" type="radio" id="option4" name=<%=`option${i+1}`%> value=<%= exam[i].allOptions[3].split(" ").join("--") %>>
+                                            <label id="option4" for="option4"><%= exam[i].allOptions[3] %></label>
+                                        </div>  
+                                    </div>
+                                    <h4 id=<%= `answer${i}` %>><%= exam[i].correct_answer %> </h4>
+                                <script>
+                                        function correct(e){ 
+                                            let correctAnswer = document.getElementById('<%= `answer${i}` %>').innerHTML
+                                            console.log("Result", correctAnswer)
+                                            let userAnswer = event.target.value.split("--").join(" ")
+                                            console.log( userAnswer)
+                                            // let correctAnswer =exam[i].correctAnswer
+                                            
+                                        //     let correctAnswer = document.getElementById("answer").innerHTML
+                                        //     console.log({userAnswer, correctAnswer})
+                                        //     // console.log(correctAnswer)
+                                        //     console.log(correctAnswer)
+                                        //     //return userAnswer
+                                        }
+
+                                        // function findAnswer () {
+                                        //     console.log(this)
+                                        // }
+                                    </script>
+                            
+                                <% } %> 
+                            </div>
+                          </div>
+                          <!-- /.panel-body -->
+                      </div>
+                      <!-- /.panel -->
+                  </div>
+                  <!-- /.col-lg-12 -->
+              </div>
+			<footer><p>© 2021 techIQ. <a href="#">Team G</a> </p></footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+	 
+    <!-- Metis Menu Js -->
+    <script src="/assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/assets/js/morris/morris.js"></script>
+	
+	
+	<script src="/assets/js/easypiechart.js"></script>
+	<script src="/assets/js/easypiechart-data.js"></script>
+	
+	 <script src="/assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
+    <!-- Custom Js -->
+    <script src="/assets/js/custom-scripts.js"></script>
+
+      <script>
+    
+      </script>
+
+</body>
+
+</html>
